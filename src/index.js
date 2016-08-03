@@ -4,10 +4,8 @@ const divider = Array(80).fill('-').join('')
 
 dump()
   .then(d => {
-    const arr = d.split('\n')
-    const firstOccurrence =
-    console.log(
-      arr.slice(arr.indexOf(divider) + 1, arr.slice(arr.indexOf(divider) + 1).indexOf(divider))
-    )
+    const docs = d.split(divider).slice(1)
+    console.log(docs.length)
+    console.log(docs.map(doc => doc.trim().split('\n').map(l => l.split('\t').join(' ').trim()).filter(l => l.split(':')[0] === 'bundle id')).length)
   })
   .catch(e => console.error(e))
