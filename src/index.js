@@ -6,6 +6,20 @@ dump()
   .then(d => {
     const docs = d.split(divider).slice(1)
     console.log(docs.length)
-    console.log(docs.map(doc => doc.trim().split('\n').map(l => l.split('\t').join(' ').trim()).filter(l => l.split(':')[0] === 'bundle id')).length)
+    console.log(
+      docs.map(
+        doc => {
+          doc
+            .trim()
+            .split('\n')
+            .map(l => {
+              return l.split('\t').join(' ').trim()
+            })
+            .filter(l => {
+              return l.split(':')[0] === 'bundle id'
+            })
+        }
+      ).length
+    )
   })
   .catch(e => console.error(e))
