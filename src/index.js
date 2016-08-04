@@ -44,6 +44,9 @@ dump()
                   .concat(curr.slice(0, curr.indexOf('\n')))
                   .concat(curr.slice(curr.indexOf('\n') + 1).replace('\t', ' '))
               }
+              if (curr.indexOf('displayVersion') === 0) {
+                return acc.concat(Array.of(curr.replace('displayVersion', 'displayVersion:')))
+              }
               if (curr[0] !== '<') {
                 return acc.concat(Array.of(curr))
               } else {
