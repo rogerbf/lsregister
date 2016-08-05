@@ -1,7 +1,7 @@
 {
   "name": "lsregister",
   "version": "0.0.1",
-  "description": "",
+  "description": "nothing useful here",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo 'tests not available'",
@@ -34,5 +34,13 @@
       "es2015"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/lsregister.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/lsregister/issues"
+  },
+  "homepage": "https://github.com/rogerbf/lsregister#readme"
 }
