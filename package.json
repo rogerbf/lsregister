@@ -1,7 +1,7 @@
 {
   "name": "lsregister",
   "version": "0.0.1",
-  "description": "nothing useful here",
+  "description": "Interact with Launch Services database",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo 'tests not available'",
@@ -9,7 +9,7 @@
     "build": "babel --ignore *.test.js --out-dir dist src",
     "prepublish": "npm run build"
   },
-  "keywords": [],
+  "keywords": ["system", "MacOS"],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/rogerbf/lsregister/issues"
   },
-  "homepage": "https://github.com/rogerbf/lsregister#readme"
+  "homepage": "https://github.com/rogerbf/lsregister#readme",
+  "bin": {
+    "lsregister-json": "./dist/bin/cli.js"
+  }
 }
