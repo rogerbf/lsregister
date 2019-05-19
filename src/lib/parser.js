@@ -1,3 +1,5 @@
+const PlistParser = require('macos-defaults/PlistParser')
+
 const documentDivider = Array(80).fill('-').join('')
 
 const separateDocuments = data => data.split(documentDivider).slice(1)
@@ -35,7 +37,7 @@ const parse = data => {
               const k = normalizeKey(line.slice(0, line.indexOf(':')).trim())
               const v = line.slice(line.indexOf(':') + 1).trim()
               const o = {}
-              o[k] = v
+              o[k] = k === 'plistCommon' ? new PlistParser({plist: v}).start() : v;
               if (k.length > 0) {
                 return Object.assign(obj, o)
               } else {

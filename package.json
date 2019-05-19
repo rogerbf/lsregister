@@ -7,15 +7,22 @@
     "test": "echo 'tests not available'",
     "prebuild": "npm test && rimraf dist",
     "build": "babel --ignore *.test.js --out-dir dist src",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
-  "keywords": ["system", "MacOS"],
+  "keywords": [
+    "system",
+    "MacOS"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
+  "contributors": [
+    "Brett Zamir"
+  ],
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "6.11.4",
-    "babel-preset-es2015": "6.9.0",
-    "rimraf": "2.5.4"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "rimraf": "2.6.3"
   },
   "files": [
     "dist",
@@ -31,10 +38,15 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "@babel/preset-env"
     ]
   },
-  "dependencies": {},
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "dependencies": {
+    "macos-defaults": "https://github.com/brettz9/macOS-defaults#openwith"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rogerbf/lsregister.git"
