@@ -4,6 +4,7 @@
   "description": "Interact with Launch Services database",
   "main": "./dist/index.js",
   "scripts": {
+    "sample": "node sample",
     "test": "echo 'tests not available'",
     "prebuild": "npm test && rimraf dist",
     "build": "babel --ignore *.test.js --out-dir dist src",
