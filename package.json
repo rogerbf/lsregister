@@ -5,8 +5,9 @@
   "main": "./dist/index.js",
   "scripts": {
     "sample": "node sample",
+    "lint": "eslint .",
     "test": "echo 'tests not available'",
-    "prebuild": "npm test && rimraf dist",
+    "prebuild": "npm run lint && npm test && rimraf dist",
     "build": "babel --ignore *.test.js --out-dir dist src",
     "prepare": "npm run build"
   },
@@ -23,6 +24,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
     "rimraf": "2.6.3"
   },
   "files": [
