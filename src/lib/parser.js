@@ -22,7 +22,7 @@ const normalizeKey = str => {
     str.slice(0, 1).toLowerCase() +
     str.slice(1)
       .replace(/\s./g, match => match[1].toUpperCase())
-      .replace(/-/g, match => '_')
+      .replace(/-/g, () => '_')
   )
 }
 
